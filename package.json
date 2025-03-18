@@ -1,0 +1,31 @@
+{
+  "name": "lt-blog-api",
+  "version": "1.0.0",
+  "description": "Building Blog APIs",
+  "keywords": [
+    "Blog",
+    "APIs"
+  ],
+  "homepage": "https://github.com/olatocode/-LT-Blog-Api#readme",
+  "bugs": {
+    "url": "https://github.com/olatocode/-LT-Blog-Api/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olatocode/-LT-Blog-Api.git"
+  },
+  "license": "ISC",
+  "author": "Tobi Awosola",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^5.0.1",
+    "nodemon": "^3.1.9"
+  }
+}
