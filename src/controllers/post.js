@@ -4,7 +4,12 @@ const { posts, Post } = require('../models/postModel');
 
 // view all posts logic/endpoint
 const allPost = (req, res) => {
-  return res.status(200).json({ data: posts });
+  try {
+    return res.status(200).json({ data: posts });
+  } catch (error) {
+      console.log(error)
+    return res.status(500).json({ message: error.message });
+  }
 };
 
 const addPost = (req, res) => {
