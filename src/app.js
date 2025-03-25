@@ -1,6 +1,7 @@
 /** @format */
 
 const express = require('express');
+const morgan = require("morgan");
 const app = express();
 const dotenv = require('dotenv');
 dotenv.config();
@@ -10,6 +11,7 @@ const postRouter = require("./routes/post")
 // express middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(morgan('dev'))
 
 const PORT = process.env.PORT;
 
@@ -20,6 +22,7 @@ app.get('/', (req, res) => {
   console.log(req.method);
 });
 
+// versioning
 app.use("/api/v1", postRouter)
 
 app.listen(PORT, () => {
