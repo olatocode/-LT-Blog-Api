@@ -1,20 +1,25 @@
 /** @format */
 
 const express = require('express');
-const morgan = require("morgan");
+const morgan = require('morgan');
+const helmet = require('helmet');
+const cors = require('cors');
 const app = express();
 const dotenv = require('dotenv');
 dotenv.config();
 
-const postRouter = require("./routes/post")
+const postRouter = require('./routes/post');
 
 // express middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(morgan('dev'))
+app.use(morgan('dev'));
+app.use(helmet());
+app.use(cors());
+
+
 
 const PORT = process.env.PORT;
-
 
 // base url
 app.get('/', (req, res) => {
@@ -22,8 +27,10 @@ app.get('/', (req, res) => {
   console.log(req.method);
 });
 
+
+
 // versioning
-app.use("/api/v1", postRouter)
+app.use('/api/v1', postRouter);
 
 app.listen(PORT, () => {
   console.log(`Blog is running on http://localhost:${PORT}`);

@@ -17,7 +17,7 @@ const addPost = (req, res) => {
   try {
     const { title, content } = req.body;
 
-    // validating data property
+    //validating data property
     // if (!title || !content) {
     //   return res.status(400).json({ message: 'Bad request' });
     // }
