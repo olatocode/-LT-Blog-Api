@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "Nodejs",
+    "content": "Im a backend dev"
+  },
+  {
+    "id": 2,
+    "title": "Totham",
+    "content": "I like lfc"
+  },
+  {
+    "id": 3,
+    "title": "Happy Sunday",
+    "content": "I love going to church"
+  },
+  {
+    "id": 4,
+    "title": "tech",
+    "content": "tech is my way of life"
+  },
+  {
+    "id": 5,
+    "title": "web",
+    "content": "i am a web developer"
+  },
+  {
+    "id": 6,
+    "title": "web",
+    "content": "i am a web developer"
+  }
+]

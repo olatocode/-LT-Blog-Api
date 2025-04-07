@@ -1,6 +1,6 @@
 /** @format */
 
-const posts = require('../database/posts');
+const { posts } = require('../database/posts');
 
 class Post {
   constructor(id, title, content) {

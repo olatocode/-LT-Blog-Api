@@ -17,21 +17,16 @@ app.use(morgan('dev'));
 app.use(helmet());
 app.use(cors());
 
-
-
 const PORT = process.env.PORT;
 
 // base url
 app.get('/', (req, res) => {
   res.status(200).json({ data: 'Welcome To Blog Api' });
-  console.log(req.method);
 });
-
-
 
 // versioning
 app.use('/api/v1', postRouter);
 
 app.listen(PORT, () => {
-  console.log(`Blog is running on http://localhost:${PORT}`);
+  console.log(`Server connected to http://localhost:${PORT}`);
 });

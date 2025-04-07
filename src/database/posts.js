@@ -1,10 +1,30 @@
 /** @format */
 
-let posts = [
-  { id: 1, title: 'The Great Gatsby', content: 'F. Scott Fitzgerald' },
-  { id: 2, title: '1984', content: 'George Orwell' },
-  { id: 3, title: 'The Incredible', content: 'Sylvester Stallion' },
-  { id: 4, title: 'Nodejs', content: 'Express framework' },
-];
+const fs = require('fs');
+const path = require('path');
 
-module.exports = posts;
+// Define the path to the JSON file
+const dataPath = path.join(__dirname, '../database/posts.json');
+
+// Initialize posts array
+let posts = [];
+
+// Load existing posts from file if it exists
+try {
+  const fileData = fs.readFileSync(dataPath, 'utf8');
+  posts = JSON.parse(fileData);
+} catch (error) {
+  // If file doesn't exist or is invalid, initialize with sample data
+  posts = [
+    {
+      id: 1,
+      title: 'Nodejs',
+      content: 'Im a backend dev',
+    },
+  ];
+  // Create the file with initial data
+  fs.writeFileSync(dataPath, JSON.stringify(posts, null, 2));
+}
+
+
+module.exports = {fs, dataPath, posts}
